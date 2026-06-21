@@ -1,0 +1,48 @@
+name: Accountability Bot
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'      # every 5 minutes (UTC). GitHub may delay this a few minutes - that's normal.
+  workflow_dispatch: {}         # adds a "Run workflow" button for manual testing
+
+concurrency:
+  group: accountability-bot     # never run two copies at once
+  cancel-in-progress: false
+
+permissions:
+  contents: write               # lets the bot save its memory (state.json) back to the repo
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run the bot
+        env:
+          # --- secrets (you add these in repo Settings -> Secrets and variables -> Actions) ---
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          # --- non-secret settings (edit these here any time) ---
+          TELEGRAM_CHAT_ID: '7695888834'
+          CHECKIN_URL: 'https://consistencycompounds.vercel.app/'
+          TIMEZONE: 'America/New_York'
+          ASK_HOUR: '9'
+          ASK_MINUTE: '0'
+        run: node bot.js
+
+      - name: Save the bot's memory
+        run: |
+          if [ -n "$(git status --porcelain state.json)" ]; then
+            git config user.name "accountability-bot"
+            git config user.email "actions@github.com"
+            git add state.json
+            git commit -m "update bot state [skip ci]"
+            git push
+          else
+            echo "no state change this run"
+          fi

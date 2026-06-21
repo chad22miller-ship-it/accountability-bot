@@ -1,0 +1,9 @@
+{
+  "phase": "idle",
+  "askedAt": null,
+  "lastNagAt": null,
+  "lastAskedDate": null,
+  "lastConfirmedDate": null,
+  "tgOffset": 0,
+  "recent": []
+}
