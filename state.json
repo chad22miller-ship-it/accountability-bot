@@ -1,9 +1,11 @@
 {
-  "phase": "idle",
-  "askedAt": null,
-  "lastNagAt": null,
-  "lastAskedDate": null,
+  "phase": "awaiting",
+  "askedAt": 1782065758606,
+  "lastNagAt": 1782065758606,
+  "lastAskedDate": "2026-06-21",
   "lastConfirmedDate": null,
-  "tgOffset": 0,
-  "recent": []
+  "tgOffset": 273311304,
+  "recent": [
+    "Before the day runs you - did you log your check-in at https://consistencycompounds.vercel.app/? Reply yes or no."
+  ]
 }
