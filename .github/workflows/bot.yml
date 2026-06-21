@@ -6,35 +6,33 @@ on:
   workflow_dispatch: {}         # adds a "Run workflow" button for manual testing
 
 concurrency:
-  group: accountability-bot     # never run two copies at once
+  group: accountability-bot
   cancel-in-progress: false
 
 permissions:
-  contents: write               # lets the bot save its memory (state.json) back to the repo
+  contents: write
 
 jobs:
   run:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Run the bot
         env:
-          # --- secrets (you add these in repo Settings -> Secrets and variables -> Actions) ---
+          # --- secrets (added in repo Settings -> Secrets and variables -> Actions) ---
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          # --- non-secret settings (edit these here any time) ---
+          # --- non-secret settings (edit any time) ---
           TELEGRAM_CHAT_ID: '7695888834'
           CHECKIN_URL: 'https://consistencycompounds.vercel.app/'
           TIMEZONE: 'America/New_York'
           ASK_HOUR: '9'
           ASK_MINUTE: '0'
         run: node bot.js
-
       - name: Save the bot's memory
         run: |
           if [ -n "$(git status --porcelain state.json)" ]; then
