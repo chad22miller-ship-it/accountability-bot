@@ -1,11 +1,12 @@
 {
-  "phase": "awaiting",
-  "askedAt": 1782065758606,
-  "lastNagAt": 1782065758606,
+  "phase": "idle",
+  "askedAt": null,
+  "lastNagAt": null,
   "lastAskedDate": "2026-06-21",
-  "lastConfirmedDate": null,
-  "tgOffset": 273311304,
+  "lastConfirmedDate": "2026-06-21",
+  "tgOffset": 273311305,
   "recent": [
+    "This is why you deserve to win: Every logged check-in today builds the margin for your future family, avoiding the 14-hour-day trap that would rob them of a present dad.",
     "Before the day runs you - did you log your check-in at https://consistencycompounds.vercel.app/? Reply yes or no."
   ]
 }
