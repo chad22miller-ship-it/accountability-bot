@@ -1,11 +1,12 @@
 {
-  "phase": "awaiting",
-  "askedAt": 1782145211811,
-  "lastNagAt": 1782145211811,
+  "phase": "idle",
+  "askedAt": null,
+  "lastNagAt": null,
   "lastAskedDate": "2026-06-22",
-  "lastConfirmedDate": "2026-06-21",
-  "tgOffset": 273311306,
+  "lastConfirmedDate": "2026-06-22",
+  "tgOffset": 273311307,
   "recent": [
+    "This is why you deserve to win: Today's check-in isn't just a mark on a page; it's the bedrock for the $250K Aegon stock opportunity that will secure your future family's financial freedom.",
     "Have you invested in your future family today with your daily check-in at https://consistencycompounds.vercel.app/? Reply yes or no.",
     "This is why you deserve to win: Every logged check-in today builds the margin for your future family, avoiding the 14-hour-day trap that would rob them of a present dad.",
     "Before the day runs you - did you log your check-in at https://consistencycompounds.vercel.app/? Reply yes or no."
