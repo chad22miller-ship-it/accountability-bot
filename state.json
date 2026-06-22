@@ -1,11 +1,12 @@
 {
-  "phase": "idle",
-  "askedAt": null,
-  "lastNagAt": null,
-  "lastAskedDate": "2026-06-21",
+  "phase": "awaiting",
+  "askedAt": 1782145211811,
+  "lastNagAt": 1782145211811,
+  "lastAskedDate": "2026-06-22",
   "lastConfirmedDate": "2026-06-21",
   "tgOffset": 273311306,
   "recent": [
+    "Have you invested in your future family today with your daily check-in at https://consistencycompounds.vercel.app/? Reply yes or no.",
     "This is why you deserve to win: Every logged check-in today builds the margin for your future family, avoiding the 14-hour-day trap that would rob them of a present dad.",
     "Before the day runs you - did you log your check-in at https://consistencycompounds.vercel.app/? Reply yes or no."
   ]
